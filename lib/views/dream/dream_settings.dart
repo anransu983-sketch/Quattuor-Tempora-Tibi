@@ -7,7 +7,9 @@ import 'package:fl_clash/views/config/network.dart';
 import 'package:fl_clash/views/config/rules.dart';
 import 'package:fl_clash/views/config/scripts.dart';
 import 'package:fl_clash/views/connection/connections.dart';
+import 'package:fl_clash/views/dream/panel_prefs.dart';
 import 'package:fl_clash/views/logs.dart';
+import 'package:fl_clash/views/panel/panel_home_view.dart';
 import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
@@ -91,6 +93,16 @@ class DreamSettingsView extends ConsumerWidget {
               title: appLocalizations.dreamRules,
               onTap: () {
                 BaseNavigator.push(context, const AddedRulesView());
+              },
+            ),
+            _HubRow(
+              glyph: AppGlyphs.dashboard,
+              title: appLocalizations.dreamPanel,
+              subtitle: DreamPanel.fromValue(
+                ref.watch(dreamPanelProvider),
+              ).label,
+              onTap: () {
+                BaseNavigator.push(context, const PanelHomeView());
               },
             ),
           ],

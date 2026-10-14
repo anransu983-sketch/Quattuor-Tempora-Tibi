@@ -7796,6 +7796,246 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Welcome to DreamBox`
+  String get dreamOnboardingWelcome {
+    return Intl.message(
+      'Welcome to DreamBox',
+      name: 'dreamOnboardingWelcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap "Start" at the bottom to connect with one tap`
+  String get dreamOnboardingWelcomeSub {
+    return Intl.message(
+      'Tap "Start" at the bottom to connect with one tap',
+      name: 'dreamOnboardingWelcomeSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change wallpaper`
+  String get dreamOnboardingWallpaper {
+    return Intl.message(
+      'Change wallpaper',
+      name: 'dreamOnboardingWallpaper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Long-press the wallpaper to pick one from your gallery`
+  String get dreamOnboardingWallpaperSub {
+    return Intl.message(
+      'Long-press the wallpaper to pick one from your gallery',
+      name: 'dreamOnboardingWallpaperSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Swipe sideways`
+  String get dreamOnboardingSwipe {
+    return Intl.message(
+      'Swipe sideways',
+      name: 'dreamOnboardingSwipe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Swipe the home page sideways to switch between Proxies, Profiles and Settings`
+  String get dreamOnboardingSwipeSub {
+    return Intl.message(
+      'Swipe the home page sideways to switch between Proxies, Profiles and Settings',
+      name: 'dreamOnboardingSwipeSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add subscription`
+  String get dreamOnboardingSubscription {
+    return Intl.message(
+      'Add subscription',
+      name: 'dreamOnboardingSubscription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap the icon at the top right and paste a link to add`
+  String get dreamOnboardingSubscriptionSub {
+    return Intl.message(
+      'Tap the icon at the top right and paste a link to add',
+      name: 'dreamOnboardingSubscriptionSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get dreamOnboardingNext {
+    return Intl.message(
+      'Next',
+      name: 'dreamOnboardingNext',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get started`
+  String get dreamOnboardingStart {
+    return Intl.message(
+      'Get started',
+      name: 'dreamOnboardingStart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dashboard`
+  String get dreamPanel {
+    return Intl.message('Dashboard', name: 'dreamPanel', desc: '', args: []);
+  }
+
+  /// `Select dashboard`
+  String get dreamPanelSelect {
+    return Intl.message(
+      'Select dashboard',
+      name: 'dreamPanelSelect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open dashboard`
+  String get dreamPanelOpen {
+    return Intl.message(
+      'Open dashboard',
+      name: 'dreamPanelOpen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Downloaded`
+  String get dreamPanelDownloaded {
+    return Intl.message(
+      'Downloaded',
+      name: 'dreamPanelDownloaded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not downloaded`
+  String get dreamPanelNotDownloaded {
+    return Intl.message(
+      'Not downloaded',
+      name: 'dreamPanelNotDownloaded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download`
+  String get dreamPanelDownload {
+    return Intl.message(
+      'Download',
+      name: 'dreamPanelDownload',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Downloading {percent}%`
+  String dreamPanelDownloading(Object percent) {
+    return Intl.message(
+      'Downloading $percent%',
+      name: 'dreamPanelDownloading',
+      desc: '',
+      args: [percent],
+    );
+  }
+
+  /// `Dashboard is only supported on Android`
+  String get dreamPanelAndroidOnly {
+    return Intl.message(
+      'Dashboard is only supported on Android',
+      name: 'dreamPanelAndroidOnly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start the proxy before opening the dashboard`
+  String get dreamPanelStartFirst {
+    return Intl.message(
+      'Start the proxy before opening the dashboard',
+      name: 'dreamPanelStartFirst',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load dashboard`
+  String get dreamPanelLoadFailed {
+    return Intl.message(
+      'Failed to load dashboard',
+      name: 'dreamPanelLoadFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get dreamPanelRetry {
+    return Intl.message('Retry', name: 'dreamPanelRetry', desc: '', args: []);
+  }
+
+  /// `External controller was enabled automatically (can be turned off in General settings); tap to dismiss`
+  String get dreamPanelControllerAutoOpened {
+    return Intl.message(
+      'External controller was enabled automatically (can be turned off in General settings); tap to dismiss',
+      name: 'dreamPanelControllerAutoOpened',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dashboard files are incomplete, please retry`
+  String get dreamPanelFileIncomplete {
+    return Intl.message(
+      'Dashboard files are incomplete, please retry',
+      name: 'dreamPanelFileIncomplete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dashboard download failed: {error}`
+  String dreamPanelDownloadFailed(Object error) {
+    return Intl.message(
+      'Dashboard download failed: $error',
+      name: 'dreamPanelDownloadFailed',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `Dashboard install failed: {error}`
+  String dreamPanelInstallFailed(Object error) {
+    return Intl.message(
+      'Dashboard install failed: $error',
+      name: 'dreamPanelInstallFailed',
+      desc: '',
+      args: [error],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

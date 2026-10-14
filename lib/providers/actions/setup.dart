@@ -437,6 +437,7 @@ class SetupAction extends _$SetupAction {
       ),
     );
     final directory = await appPath.profilesPath;
+    final externalUiDir = await PanelManager.panelExternalUiDir();
     final injected = await _resolveInjectedProviders(
       setupState,
       proxyGroups: proxyGroups,
@@ -460,6 +461,7 @@ class SetupAction extends _$SetupAction {
         authentication: networkSetting.authentication.credentials,
         matchTarget: setupState.matchTarget,
         safeMode: ref.read(safeModeProvider),
+        externalUiDir: externalUiDir,
       ),
     );
     return res;

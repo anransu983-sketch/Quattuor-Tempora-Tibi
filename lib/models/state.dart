@@ -347,6 +347,10 @@ abstract class MakeRealProfileState with _$MakeRealProfileState {
     @Default({}) Map<String, dynamic> injectedRuleProviders,
     String? matchTarget,
     @Default(false) bool safeMode,
+
+    /// Absolute external-ui directory of the downloaded dashboard panel,
+    /// resolved on the main isolate before the compute task runs.
+    @Default('') String externalUiDir,
   }) = _MakeRealProfileState;
 }
 

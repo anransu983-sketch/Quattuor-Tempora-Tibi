@@ -180,7 +180,7 @@ Future<({String yaml, String md5})> _makeRealProfileTask(
       rawConfig['iptables'] = {'enable': false};
     }
   }
-  rawConfig['external-ui'] = '';
+  rawConfig['external-ui'] = data.externalUiDir;
   switch (realPatchConfig.interfaceNameMode) {
     case InterfaceNameMode.clear:
       rawConfig['interface-name'] = '';
