@@ -703,6 +703,52 @@ class MessageLookup extends MessageLookupByLibrary {
     "downloadBandwidth": MessageLookupByLibrary.simpleMessage(
       "Download bandwidth",
     ),
+    "dreamAboutSub": MessageLookupByLibrary.simpleMessage(
+      "Version and licenses",
+    ),
+    "dreamAppSettings": MessageLookupByLibrary.simpleMessage("App"),
+    "dreamAppSettingsSub": MessageLookupByLibrary.simpleMessage(
+      "Theme, language and behavior",
+    ),
+    "dreamBackup": MessageLookupByLibrary.simpleMessage("Backup"),
+    "dreamBackupSub": MessageLookupByLibrary.simpleMessage(
+      "Import and export backups",
+    ),
+    "dreamConnections": MessageLookupByLibrary.simpleMessage("Connections"),
+    "dreamCustomGreeting": MessageLookupByLibrary.simpleMessage("Greeting"),
+    "dreamExpandSidebar": MessageLookupByLibrary.simpleMessage(
+      "Expand sidebar",
+    ),
+    "dreamGreetingAfternoon": MessageLookupByLibrary.simpleMessage(
+      "Good afternoon",
+    ),
+    "dreamGreetingEvening": MessageLookupByLibrary.simpleMessage(
+      "Good evening",
+    ),
+    "dreamGreetingMorning": MessageLookupByLibrary.simpleMessage(
+      "Good morning",
+    ),
+    "dreamHomeSettings": MessageLookupByLibrary.simpleMessage("Home settings"),
+    "dreamHomeSettingsSub": MessageLookupByLibrary.simpleMessage(
+      "Greeting and sidebar",
+    ),
+    "dreamLogs": MessageLookupByLibrary.simpleMessage("Logs"),
+    "dreamMetaSub": MessageLookupByLibrary.simpleMessage(
+      "Connections, logs and rules",
+    ),
+    "dreamNetworkSettings": MessageLookupByLibrary.simpleMessage("Network"),
+    "dreamNetworkSettingsSub": MessageLookupByLibrary.simpleMessage(
+      "Proxy mode, DNS and access control",
+    ),
+    "dreamOverrideSettings": MessageLookupByLibrary.simpleMessage("Override"),
+    "dreamOverrideSettingsSub": MessageLookupByLibrary.simpleMessage(
+      "YAML, JS and rule overrides",
+    ),
+    "dreamRules": MessageLookupByLibrary.simpleMessage("Rules"),
+    "dreamSectionInterface": MessageLookupByLibrary.simpleMessage("Interface"),
+    "dreamSectionMeta": MessageLookupByLibrary.simpleMessage("Meta"),
+    "dreamSectionMore": MessageLookupByLibrary.simpleMessage("More"),
+    "dreamStop": MessageLookupByLibrary.simpleMessage("Stop"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "editGlobalRules": MessageLookupByLibrary.simpleMessage(
       "Edit global rules",
@@ -840,6 +886,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hideTimeoutProxiesDesc": MessageLookupByLibrary.simpleMessage(
       "Leave out proxies whose last delay test timed out",
     ),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "hopInterval": MessageLookupByLibrary.simpleMessage("Hop interval"),
     "host": MessageLookupByLibrary.simpleMessage("Host"),
     "hostname": MessageLookupByLibrary.simpleMessage("Hostname"),
@@ -897,9 +944,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "inputRuleContent": MessageLookupByLibrary.simpleMessage(
       "Enter the rule content",
     ),
-    "installedAppsPermissionDeniedMessage": MessageLookupByLibrary.simpleMessage(
-      "The app list permission was denied, so installed apps cannot be listed. Please grant it manually in system settings.",
-    ),
+    "installedAppsPermissionDeniedMessage":
+        MessageLookupByLibrary.simpleMessage(
+          "The app list permission was denied, so installed apps cannot be listed. Please grant it manually in system settings.",
+        ),
     "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
       "This system hides the installed app list until the permission is granted. Authorize it to configure the per-app proxy.",
     ),

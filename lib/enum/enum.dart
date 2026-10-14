@@ -558,6 +558,7 @@ extension GeoResourceExt on GeoResource {
 }
 
 enum PageLabel {
+  home,
   dashboard,
   proxies,
   profiles,
@@ -567,6 +568,7 @@ enum PageLabel {
   resources,
   connections,
   dns,
+  settings,
 }
 
 enum RuleAction {

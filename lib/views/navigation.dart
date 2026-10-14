@@ -16,10 +16,20 @@ class Navigation implements NavigationPort {
     return [
       NavigationItem(
         keep: false,
+        glyph: AppGlyphs.home,
+        label: PageLabel.home,
+        builder: (_) => const DreamHomeView(
+          key: GlobalObjectKey(PageLabel.home),
+        ),
+        modes: const [NavigationItemMode.mobile],
+      ),
+      NavigationItem(
+        keep: false,
         glyph: AppGlyphs.dashboard,
         label: PageLabel.dashboard,
         builder: (_) =>
             const DashboardView(key: GlobalObjectKey(PageLabel.dashboard)),
+        modes: const [NavigationItemMode.desktop],
       ),
       NavigationItem(
         glyph: AppGlyphs.proxies,
@@ -76,7 +86,15 @@ class Navigation implements NavigationPort {
         glyph: AppGlyphs.tools,
         label: PageLabel.tools,
         builder: (_) => const ToolsView(key: GlobalObjectKey(PageLabel.tools)),
-        modes: [NavigationItemMode.desktop, NavigationItemMode.mobile],
+        modes: const [NavigationItemMode.desktop],
+      ),
+      NavigationItem(
+        keep: false,
+        glyph: AppGlyphs.settings,
+        label: PageLabel.settings,
+        builder: (_) =>
+            const DreamSettingsView(key: GlobalObjectKey(PageLabel.settings)),
+        modes: const [NavigationItemMode.mobile],
       ),
     ];
   }

@@ -730,6 +730,52 @@ class MessageLookup extends MessageLookupByLibrary {
     "downloadBandwidth": MessageLookupByLibrary.simpleMessage(
       "Скорость загрузки",
     ),
+    "dreamAboutSub": MessageLookupByLibrary.simpleMessage("Версия и лицензии"),
+    "dreamAppSettings": MessageLookupByLibrary.simpleMessage("Приложение"),
+    "dreamAppSettingsSub": MessageLookupByLibrary.simpleMessage(
+      "Тема, язык и поведение",
+    ),
+    "dreamBackup": MessageLookupByLibrary.simpleMessage("Резервная копия"),
+    "dreamBackupSub": MessageLookupByLibrary.simpleMessage(
+      "Импорт и экспорт резервных копий",
+    ),
+    "dreamConnections": MessageLookupByLibrary.simpleMessage("Соединения"),
+    "dreamCustomGreeting": MessageLookupByLibrary.simpleMessage("Приветствие"),
+    "dreamExpandSidebar": MessageLookupByLibrary.simpleMessage(
+      "Развернуть боковую панель",
+    ),
+    "dreamGreetingAfternoon": MessageLookupByLibrary.simpleMessage(
+      "Добрый день",
+    ),
+    "dreamGreetingEvening": MessageLookupByLibrary.simpleMessage(
+      "Добрый вечер",
+    ),
+    "dreamGreetingMorning": MessageLookupByLibrary.simpleMessage("Доброе утро"),
+    "dreamHomeSettings": MessageLookupByLibrary.simpleMessage(
+      "Настройки главной",
+    ),
+    "dreamHomeSettingsSub": MessageLookupByLibrary.simpleMessage(
+      "Приветствие и боковая панель",
+    ),
+    "dreamLogs": MessageLookupByLibrary.simpleMessage("Журналы"),
+    "dreamMetaSub": MessageLookupByLibrary.simpleMessage(
+      "Соединения, журналы и правила",
+    ),
+    "dreamNetworkSettings": MessageLookupByLibrary.simpleMessage("Сеть"),
+    "dreamNetworkSettingsSub": MessageLookupByLibrary.simpleMessage(
+      "Режим прокси, DNS и контроль доступа",
+    ),
+    "dreamOverrideSettings": MessageLookupByLibrary.simpleMessage(
+      "Переопределение",
+    ),
+    "dreamOverrideSettingsSub": MessageLookupByLibrary.simpleMessage(
+      "Переопределение YAML, JS и правил",
+    ),
+    "dreamRules": MessageLookupByLibrary.simpleMessage("Правила"),
+    "dreamSectionInterface": MessageLookupByLibrary.simpleMessage("Интерфейс"),
+    "dreamSectionMeta": MessageLookupByLibrary.simpleMessage("Функции Meta"),
+    "dreamSectionMore": MessageLookupByLibrary.simpleMessage("Ещё"),
+    "dreamStop": MessageLookupByLibrary.simpleMessage("Стоп"),
     "edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
     "editGlobalRules": MessageLookupByLibrary.simpleMessage(
       "Редактировать глобальные правила",
@@ -877,6 +923,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hideTimeoutProxiesDesc": MessageLookupByLibrary.simpleMessage(
       "Не показывать прокси, у которых последний тест задержки завершился таймаутом",
     ),
+    "home": MessageLookupByLibrary.simpleMessage("Главная"),
     "hopInterval": MessageLookupByLibrary.simpleMessage("Интервал перескока"),
     "host": MessageLookupByLibrary.simpleMessage("Хост"),
     "hostname": MessageLookupByLibrary.simpleMessage("Имя хоста"),
@@ -932,9 +979,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "inputRuleContent": MessageLookupByLibrary.simpleMessage(
       "Введите содержимое правила",
     ),
-    "installedAppsPermissionDeniedMessage": MessageLookupByLibrary.simpleMessage(
-      "Разрешение на список приложений отклонено, поэтому установленные приложения недоступны. Предоставьте его вручную в системных настройках.",
-    ),
+    "installedAppsPermissionDeniedMessage":
+        MessageLookupByLibrary.simpleMessage(
+          "Разрешение на список приложений отклонено, поэтому установленные приложения недоступны. Предоставьте его вручную в системных настройках.",
+        ),
     "installedAppsPermissionDesc": MessageLookupByLibrary.simpleMessage(
       "Эта система не выдаёт список установленных приложений без разрешения. Предоставьте его, чтобы настроить прокси для отдельных приложений.",
     ),

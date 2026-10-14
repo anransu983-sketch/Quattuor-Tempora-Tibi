@@ -7586,6 +7586,216 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Stop`
+  String get dreamStop {
+    return Intl.message('Stop', name: 'dreamStop', desc: '', args: []);
+  }
+
+  /// `Good morning`
+  String get dreamGreetingMorning {
+    return Intl.message(
+      'Good morning',
+      name: 'dreamGreetingMorning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good afternoon`
+  String get dreamGreetingAfternoon {
+    return Intl.message(
+      'Good afternoon',
+      name: 'dreamGreetingAfternoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good evening`
+  String get dreamGreetingEvening {
+    return Intl.message(
+      'Good evening',
+      name: 'dreamGreetingEvening',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home settings`
+  String get dreamHomeSettings {
+    return Intl.message(
+      'Home settings',
+      name: 'dreamHomeSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Greeting and sidebar`
+  String get dreamHomeSettingsSub {
+    return Intl.message(
+      'Greeting and sidebar',
+      name: 'dreamHomeSettingsSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Greeting`
+  String get dreamCustomGreeting {
+    return Intl.message(
+      'Greeting',
+      name: 'dreamCustomGreeting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expand sidebar`
+  String get dreamExpandSidebar {
+    return Intl.message(
+      'Expand sidebar',
+      name: 'dreamExpandSidebar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interface`
+  String get dreamSectionInterface {
+    return Intl.message(
+      'Interface',
+      name: 'dreamSectionInterface',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Meta`
+  String get dreamSectionMeta {
+    return Intl.message('Meta', name: 'dreamSectionMeta', desc: '', args: []);
+  }
+
+  /// `More`
+  String get dreamSectionMore {
+    return Intl.message('More', name: 'dreamSectionMore', desc: '', args: []);
+  }
+
+  /// `App`
+  String get dreamAppSettings {
+    return Intl.message('App', name: 'dreamAppSettings', desc: '', args: []);
+  }
+
+  /// `Theme, language and behavior`
+  String get dreamAppSettingsSub {
+    return Intl.message(
+      'Theme, language and behavior',
+      name: 'dreamAppSettingsSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Network`
+  String get dreamNetworkSettings {
+    return Intl.message(
+      'Network',
+      name: 'dreamNetworkSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proxy mode, DNS and access control`
+  String get dreamNetworkSettingsSub {
+    return Intl.message(
+      'Proxy mode, DNS and access control',
+      name: 'dreamNetworkSettingsSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Override`
+  String get dreamOverrideSettings {
+    return Intl.message(
+      'Override',
+      name: 'dreamOverrideSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `YAML, JS and rule overrides`
+  String get dreamOverrideSettingsSub {
+    return Intl.message(
+      'YAML, JS and rule overrides',
+      name: 'dreamOverrideSettingsSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connections`
+  String get dreamConnections {
+    return Intl.message(
+      'Connections',
+      name: 'dreamConnections',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logs`
+  String get dreamLogs {
+    return Intl.message('Logs', name: 'dreamLogs', desc: '', args: []);
+  }
+
+  /// `Rules`
+  String get dreamRules {
+    return Intl.message('Rules', name: 'dreamRules', desc: '', args: []);
+  }
+
+  /// `Backup`
+  String get dreamBackup {
+    return Intl.message('Backup', name: 'dreamBackup', desc: '', args: []);
+  }
+
+  /// `Import and export backups`
+  String get dreamBackupSub {
+    return Intl.message(
+      'Import and export backups',
+      name: 'dreamBackupSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Version and licenses`
+  String get dreamAboutSub {
+    return Intl.message(
+      'Version and licenses',
+      name: 'dreamAboutSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connections, logs and rules`
+  String get dreamMetaSub {
+    return Intl.message(
+      'Connections, logs and rules',
+      name: 'dreamMetaSub',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
