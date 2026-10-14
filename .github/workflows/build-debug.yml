@@ -1,0 +1,85 @@
+name: build-debug-apk
+
+# 轻量 debug 构建：只编 Android arm64 APK，不跑上游 build.yaml 的全平台矩阵。
+# 上游 build.yaml 在本分支已删除（需要 KEYSTORE 等 secrets 且全平台太重）。
+# debug 包无需签名文件（build.gradle.kts 无 keystore 时自动用 debug 签名），
+# 包名为 com.follow.clash.dev，不与正式版冲突，可覆盖安装。
+
+on:
+  push:
+    branches:
+      - ci/debug-build
+  workflow_dispatch:
+
+env:
+  FLUTTER_VERSION: '3.47.6'
+  GO_VERSION: '1.27.1'
+  NDK_VERSION: r28c
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          cache-dependency-path: core/go.sum
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Rust
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            services/helper
+            plugins/rust_api/rust
+
+      - name: Setup NDK
+        uses: nttld/setup-ndk@v1
+        id: ndk
+        with:
+          ndk-version: ${{ env.NDK_VERSION }}
+          add-to-path: true
+          link-to-sdk: true
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build debug APK (arm64)
+        env:
+          ANDROID_NDK_HOME: ${{ steps.ndk.outputs.ndk-path }}
+        run: dart setup.dart android --arch arm64
+
+      - name: List outputs
+        run: ls -la dist/
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: flclash-debug-apk
+          path: dist/*.apk
+
+      - name: Create prerelease
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: debug-build-${{ github.run_number }}
+          name: debug-build-${{ github.run_number }}
+          prerelease: true
+          files: dist/*.apk
