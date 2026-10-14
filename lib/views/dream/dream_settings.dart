@@ -29,7 +29,7 @@ class DreamSettingsView extends ConsumerWidget {
       right: false,
       bottom: false,
       child: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.fromLTRB(16, 16, 16, 16 + BottomInsetScope.of(context)),
         children: [
         _SectionHeader(label: appLocalizations.dreamSectionInterface),
         _HubCard(

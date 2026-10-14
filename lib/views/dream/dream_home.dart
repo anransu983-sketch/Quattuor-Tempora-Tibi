@@ -65,17 +65,17 @@ class _DreamMainCard extends StatelessWidget {
         color: context.colorScheme.surfaceContainerLowest,
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: const Column(
+      child: Column(
         children: [
-          Expanded(flex: 5, child: _OrbArea()),
-          _TrafficRow(),
-          SizedBox(height: 8),
-          _NodeRow(),
-          SizedBox(height: 12),
-          _GreetingBlock(),
-          SizedBox(height: 16),
-          _BottomBar(),
-          SizedBox(height: 16),
+          const Expanded(flex: 5, child: _OrbArea()),
+          const _TrafficRow(),
+          const SizedBox(height: 8),
+          const _NodeRow(),
+          const SizedBox(height: 12),
+          const _GreetingBlock(),
+          const SizedBox(height: 16),
+          const _BottomBar(),
+          SizedBox(height: 16 + BottomInsetScope.of(context)),
         ],
       ),
     );
