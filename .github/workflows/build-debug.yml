@@ -11,6 +11,10 @@ on:
       - ci/debug-build
   workflow_dispatch:
 
+# 发 prerelease 需要写 contents 权限（新仓库默认只读会挂）
+permissions:
+  contents: write
+
 env:
   FLUTTER_VERSION: '3.47.6'
   GO_VERSION: '1.27.1'
