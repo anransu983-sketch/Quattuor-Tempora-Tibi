@@ -1,3 +1,4 @@
+import 'package:fl_clash/providers/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -31,10 +32,12 @@ class _OnboardingGateState extends ConsumerState<OnboardingGate> {
   @override
   Widget build(BuildContext context) {
     final seen = ref.watch(dreamOnboardingSeenProvider);
+    final isMobile = ref.watch(isMobileViewProvider);
     return Stack(
       children: [
         widget.child,
-        if (!seen) Positioned.fill(child: OnboardingView(onDone: _onDone)),
+        if (!seen && isMobile)
+          Positioned.fill(child: OnboardingView(onDone: _onDone)),
       ],
     );
   }

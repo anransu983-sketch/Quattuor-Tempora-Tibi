@@ -5,6 +5,7 @@ import 'package:fl_clash/manager/app_manager.dart';
 import 'package:fl_clash/models/common.dart';
 import 'package:fl_clash/providers/providers.dart';
 import 'package:fl_clash/views/dashboard/widgets/start_button.dart';
+import 'package:fl_clash/views/dream/onboarding/onboarding_gate.dart';
 import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter/foundation.dart';
 import 'package:material_ui/material_ui.dart';
@@ -25,8 +26,9 @@ class HomePage extends ConsumerWidget {
     }
     return HomeBackScopeContainer(
       child: AppSidebarContainer(
-        child: _HomeShell(
-          child: Consumer(
+        child: OnboardingGate(
+          child: _HomeShell(
+            child: Consumer(
             builder: (_, ref, _) {
               final navigationItems = ref
                   .watch(currentNavigationItemsStateProvider)
@@ -51,6 +53,7 @@ class HomePage extends ConsumerWidget {
                 },
               );
             },
+          ),
           ),
         ),
       ),

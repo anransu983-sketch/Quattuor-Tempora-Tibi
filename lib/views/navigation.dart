@@ -3,7 +3,6 @@ import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/icons/app_glyphs.dart';
 import 'package:fl_clash/models/models.dart';
 import 'package:fl_clash/views/views.dart';
-import 'package:fl_clash/views/dream/onboarding/onboarding_gate.dart';
 import 'package:material_ui/material_ui.dart';
 
 class Navigation implements NavigationPort {
@@ -19,9 +18,8 @@ class Navigation implements NavigationPort {
         keep: false,
         glyph: AppGlyphs.home,
         label: PageLabel.home,
-        builder: (_) => const OnboardingGate(
-          child: DreamHomeView(key: GlobalObjectKey(PageLabel.home)),
-        ),
+        builder: (_) =>
+            const DreamHomeView(key: GlobalObjectKey(PageLabel.home)),
         modes: const [NavigationItemMode.mobile],
       ),
       NavigationItem(
