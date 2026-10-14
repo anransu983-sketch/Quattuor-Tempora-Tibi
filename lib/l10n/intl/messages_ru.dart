@@ -833,6 +833,51 @@ class MessageLookup extends MessageLookupByLibrary {
     "dreamSectionMeta": MessageLookupByLibrary.simpleMessage("Функции Meta"),
     "dreamSectionMore": MessageLookupByLibrary.simpleMessage("Ещё"),
     "dreamStop": MessageLookupByLibrary.simpleMessage("Стоп"),
+    "dreamTrafficClear": MessageLookupByLibrary.simpleMessage(
+      "Очистить записи",
+    ),
+    "dreamTrafficClearAction": MessageLookupByLibrary.simpleMessage("Очистить"),
+    "dreamTrafficClearConfirm": MessageLookupByLibrary.simpleMessage(
+      "Очистить всю статистику трафика? Это действие необратимо.",
+    ),
+    "dreamTrafficDay": MessageLookupByLibrary.simpleMessage("День"),
+    "dreamTrafficDown": MessageLookupByLibrary.simpleMessage("Входящий"),
+    "dreamTrafficFootprint": MessageLookupByLibrary.simpleMessage(
+      "Активность трафика",
+    ),
+    "dreamTrafficFri": MessageLookupByLibrary.simpleMessage("Пт"),
+    "dreamTrafficMon": MessageLookupByLibrary.simpleMessage("Пн"),
+    "dreamTrafficMonth": MessageLookupByLibrary.simpleMessage("Месяц"),
+    "dreamTrafficNoAppData": MessageLookupByLibrary.simpleMessage(
+      "Нет данных по приложениям",
+    ),
+    "dreamTrafficNoFootprint": MessageLookupByLibrary.simpleMessage(
+      "Нет записей активности",
+    ),
+    "dreamTrafficNoNodeData": MessageLookupByLibrary.simpleMessage(
+      "Нет данных по узлам",
+    ),
+    "dreamTrafficPerApp": MessageLookupByLibrary.simpleMessage(
+      "Трафик по приложениям",
+    ),
+    "dreamTrafficPerNode": MessageLookupByLibrary.simpleMessage(
+      "Трафик по узлам",
+    ),
+    "dreamTrafficSat": MessageLookupByLibrary.simpleMessage("Сб"),
+    "dreamTrafficSort": MessageLookupByLibrary.simpleMessage("Сортировка"),
+    "dreamTrafficSortByName": MessageLookupByLibrary.simpleMessage(
+      "Название ↑",
+    ),
+    "dreamTrafficStats": MessageLookupByLibrary.simpleMessage(
+      "Статистика трафика",
+    ),
+    "dreamTrafficSun": MessageLookupByLibrary.simpleMessage("Вс"),
+    "dreamTrafficThu": MessageLookupByLibrary.simpleMessage("Чт"),
+    "dreamTrafficTotal": MessageLookupByLibrary.simpleMessage("Трафик"),
+    "dreamTrafficTue": MessageLookupByLibrary.simpleMessage("Вт"),
+    "dreamTrafficUp": MessageLookupByLibrary.simpleMessage("Исходящий"),
+    "dreamTrafficWed": MessageLookupByLibrary.simpleMessage("Ср"),
+    "dreamTrafficWeek": MessageLookupByLibrary.simpleMessage("Неделя"),
     "edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
     "editGlobalRules": MessageLookupByLibrary.simpleMessage(
       "Редактировать глобальные правила",

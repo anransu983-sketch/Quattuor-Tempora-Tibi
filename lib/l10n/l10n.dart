@@ -8036,6 +8036,191 @@ class AppLocalizations {
       args: [error],
     );
   }
+
+  /// `Traffic statistics`
+  String get dreamTrafficStats {
+    return Intl.message(
+      'Traffic statistics',
+      name: 'dreamTrafficStats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear records`
+  String get dreamTrafficClear {
+    return Intl.message(
+      'Clear records',
+      name: 'dreamTrafficClear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear all traffic statistics? This cannot be undone.`
+  String get dreamTrafficClearConfirm {
+    return Intl.message(
+      'Clear all traffic statistics? This cannot be undone.',
+      name: 'dreamTrafficClearConfirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear`
+  String get dreamTrafficClearAction {
+    return Intl.message(
+      'Clear',
+      name: 'dreamTrafficClearAction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Day`
+  String get dreamTrafficDay {
+    return Intl.message('Day', name: 'dreamTrafficDay', desc: '', args: []);
+  }
+
+  /// `Week`
+  String get dreamTrafficWeek {
+    return Intl.message('Week', name: 'dreamTrafficWeek', desc: '', args: []);
+  }
+
+  /// `Month`
+  String get dreamTrafficMonth {
+    return Intl.message('Month', name: 'dreamTrafficMonth', desc: '', args: []);
+  }
+
+  /// `Down`
+  String get dreamTrafficDown {
+    return Intl.message('Down', name: 'dreamTrafficDown', desc: '', args: []);
+  }
+
+  /// `Up`
+  String get dreamTrafficUp {
+    return Intl.message('Up', name: 'dreamTrafficUp', desc: '', args: []);
+  }
+
+  /// `Traffic`
+  String get dreamTrafficTotal {
+    return Intl.message(
+      'Traffic',
+      name: 'dreamTrafficTotal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Per-app traffic`
+  String get dreamTrafficPerApp {
+    return Intl.message(
+      'Per-app traffic',
+      name: 'dreamTrafficPerApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No per-app traffic data yet`
+  String get dreamTrafficNoAppData {
+    return Intl.message(
+      'No per-app traffic data yet',
+      name: 'dreamTrafficNoAppData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Per-node traffic`
+  String get dreamTrafficPerNode {
+    return Intl.message(
+      'Per-node traffic',
+      name: 'dreamTrafficPerNode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No per-node traffic data yet`
+  String get dreamTrafficNoNodeData {
+    return Intl.message(
+      'No per-node traffic data yet',
+      name: 'dreamTrafficNoNodeData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Traffic footprint`
+  String get dreamTrafficFootprint {
+    return Intl.message(
+      'Traffic footprint',
+      name: 'dreamTrafficFootprint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No footprint records yet`
+  String get dreamTrafficNoFootprint {
+    return Intl.message(
+      'No footprint records yet',
+      name: 'dreamTrafficNoFootprint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sort`
+  String get dreamTrafficSort {
+    return Intl.message('Sort', name: 'dreamTrafficSort', desc: '', args: []);
+  }
+
+  /// `App name ↑`
+  String get dreamTrafficSortByName {
+    return Intl.message(
+      'App name ↑',
+      name: 'dreamTrafficSortByName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mon`
+  String get dreamTrafficMon {
+    return Intl.message('Mon', name: 'dreamTrafficMon', desc: '', args: []);
+  }
+
+  /// `Tue`
+  String get dreamTrafficTue {
+    return Intl.message('Tue', name: 'dreamTrafficTue', desc: '', args: []);
+  }
+
+  /// `Wed`
+  String get dreamTrafficWed {
+    return Intl.message('Wed', name: 'dreamTrafficWed', desc: '', args: []);
+  }
+
+  /// `Thu`
+  String get dreamTrafficThu {
+    return Intl.message('Thu', name: 'dreamTrafficThu', desc: '', args: []);
+  }
+
+  /// `Fri`
+  String get dreamTrafficFri {
+    return Intl.message('Fri', name: 'dreamTrafficFri', desc: '', args: []);
+  }
+
+  /// `Sat`
+  String get dreamTrafficSat {
+    return Intl.message('Sat', name: 'dreamTrafficSat', desc: '', args: []);
+  }
+
+  /// `Sun`
+  String get dreamTrafficSun {
+    return Intl.message('Sun', name: 'dreamTrafficSun', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

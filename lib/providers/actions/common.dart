@@ -1,9 +1,14 @@
 part of '../action.dart';
 
+const _trafficStatsFlushTicks = 60;
+
 @Riverpod(keepAlive: true)
 class CommonAction extends _$CommonAction {
   CoreController get _core => ref.read(coreHandlerProvider);
   bool _isUpdatingTraffic = false;
+  Traffic? _lastTotalTraffic;
+  final _pendingTrafficBuckets = <DateTime, ({int upBytes, int downBytes})>{};
+  int _unflushedTrafficTicks = 0;
 
   @override
   void build() {}
@@ -55,9 +60,60 @@ class CommonAction extends _$CommonAction {
       }
       if (totalTraffic != null) {
         ref.read(totalTrafficProvider.notifier).value = totalTraffic;
+        _recordTotalTraffic(totalTraffic);
       }
     } finally {
       _isUpdatingTraffic = false;
+    }
+  }
+
+  /// The core reports cumulative totals, so each tick contributes the delta
+  /// since the previous one. A negative delta means the counters reset under
+  /// us (core restart) and the new total is traffic of its own.
+  void _recordTotalTraffic(Traffic total) {
+    final last = _lastTotalTraffic;
+    _lastTotalTraffic = total;
+    if (last == null) {
+      return;
+    }
+    var upDelta = (total.up - last.up).toInt();
+    var downDelta = (total.down - last.down).toInt();
+    if (upDelta < 0) {
+      upDelta = total.up.toInt();
+    }
+    if (downDelta < 0) {
+      downDelta = total.down.toInt();
+    }
+    if (upDelta <= 0 && downDelta <= 0) {
+      return;
+    }
+    final now = DateTime.now();
+    final hour = DateTime(now.year, now.month, now.day, now.hour);
+    final bucket = _pendingTrafficBuckets[hour];
+    _pendingTrafficBuckets[hour] = (
+      upBytes: (bucket?.upBytes ?? 0) + upDelta,
+      downBytes: (bucket?.downBytes ?? 0) + downDelta,
+    );
+    _unflushedTrafficTicks++;
+    if (_unflushedTrafficTicks >= _trafficStatsFlushTicks) {
+      unawaited(_flushTrafficStats());
+    }
+  }
+
+  Future<void> _flushTrafficStats() async {
+    final buckets = Map.of(_pendingTrafficBuckets);
+    _pendingTrafficBuckets.clear();
+    _unflushedTrafficTicks = 0;
+    if (buckets.isEmpty) {
+      return;
+    }
+    try {
+      await database.trafficHourlyDao.addBuckets(buckets);
+    } catch (error) {
+      commonPrint.log(
+        'flush traffic stats failed: ${compactError(error)}',
+        logLevel: LogLevel.warning,
+      );
     }
   }
 

@@ -10,6 +10,7 @@ import 'package:fl_clash/views/connection/connections.dart';
 import 'package:fl_clash/views/dream/panel_prefs.dart';
 import 'package:fl_clash/views/logs.dart';
 import 'package:fl_clash/views/panel/panel_home_view.dart';
+import 'package:fl_clash/views/traffic_stats_view.dart';
 import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
@@ -93,6 +94,13 @@ class DreamSettingsView extends ConsumerWidget {
               title: appLocalizations.dreamRules,
               onTap: () {
                 BaseNavigator.push(context, const AddedRulesView());
+              },
+            ),
+            _HubRow(
+              glyph: AppGlyphs.dataUsage,
+              title: appLocalizations.dreamTrafficStats,
+              onTap: () {
+                BaseNavigator.push(context, const TrafficStatsView());
               },
             ),
             _HubRow(

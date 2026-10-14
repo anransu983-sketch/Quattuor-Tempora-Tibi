@@ -1066,3 +1066,31 @@ class ProfileDisabledRuleIds extends _$ProfileDisabledRuleIds
     optimistic(next, () => database.rulesDao.putDisabled(profileId, ruleId));
   }
 }
+
+
+enum TrafficStatsRange { day, week, month }
+
+/// Hand-written: riverpod_generator cannot turn drift row classes into code,
+/// so this stream cannot be a generated provider.
+final trafficHourlyStatsProvider =
+    StreamProvider.autoDispose.family<List<TrafficHourlyData>, int>(
+      (ref, rangeIndex) {
+        final range = TrafficStatsRange.values[rangeIndex];
+        final now = DateTime.now();
+        final dayStart = DateTime(now.year, now.month, now.day);
+        final from = switch (range) {
+          TrafficStatsRange.day => dayStart,
+          TrafficStatsRange.week => dayStart.subtract(
+            Duration(days: dayStart.weekday - 1),
+          ),
+          TrafficStatsRange.month => DateTime(now.year, now.month),
+        };
+        final to = switch (range) {
+          TrafficStatsRange.day => dayStart.add(const Duration(days: 1)),
+          TrafficStatsRange.week => from.add(const Duration(days: 7)),
+          TrafficStatsRange.month => DateTime(now.year, now.month + 1),
+        };
+        return database.trafficHourlyDao.hourlyInRange(from, to).watch();
+      },
+      name: 'trafficHourlyStatsProvider',
+    );

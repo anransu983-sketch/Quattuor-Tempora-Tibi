@@ -810,6 +810,49 @@ class MessageLookup extends MessageLookupByLibrary {
     "dreamSectionMeta": MessageLookupByLibrary.simpleMessage("Meta"),
     "dreamSectionMore": MessageLookupByLibrary.simpleMessage("More"),
     "dreamStop": MessageLookupByLibrary.simpleMessage("Stop"),
+    "dreamTrafficClear": MessageLookupByLibrary.simpleMessage("Clear records"),
+    "dreamTrafficClearAction": MessageLookupByLibrary.simpleMessage("Clear"),
+    "dreamTrafficClearConfirm": MessageLookupByLibrary.simpleMessage(
+      "Clear all traffic statistics? This cannot be undone.",
+    ),
+    "dreamTrafficDay": MessageLookupByLibrary.simpleMessage("Day"),
+    "dreamTrafficDown": MessageLookupByLibrary.simpleMessage("Down"),
+    "dreamTrafficFootprint": MessageLookupByLibrary.simpleMessage(
+      "Traffic footprint",
+    ),
+    "dreamTrafficFri": MessageLookupByLibrary.simpleMessage("Fri"),
+    "dreamTrafficMon": MessageLookupByLibrary.simpleMessage("Mon"),
+    "dreamTrafficMonth": MessageLookupByLibrary.simpleMessage("Month"),
+    "dreamTrafficNoAppData": MessageLookupByLibrary.simpleMessage(
+      "No per-app traffic data yet",
+    ),
+    "dreamTrafficNoFootprint": MessageLookupByLibrary.simpleMessage(
+      "No footprint records yet",
+    ),
+    "dreamTrafficNoNodeData": MessageLookupByLibrary.simpleMessage(
+      "No per-node traffic data yet",
+    ),
+    "dreamTrafficPerApp": MessageLookupByLibrary.simpleMessage(
+      "Per-app traffic",
+    ),
+    "dreamTrafficPerNode": MessageLookupByLibrary.simpleMessage(
+      "Per-node traffic",
+    ),
+    "dreamTrafficSat": MessageLookupByLibrary.simpleMessage("Sat"),
+    "dreamTrafficSort": MessageLookupByLibrary.simpleMessage("Sort"),
+    "dreamTrafficSortByName": MessageLookupByLibrary.simpleMessage(
+      "App name ↑",
+    ),
+    "dreamTrafficStats": MessageLookupByLibrary.simpleMessage(
+      "Traffic statistics",
+    ),
+    "dreamTrafficSun": MessageLookupByLibrary.simpleMessage("Sun"),
+    "dreamTrafficThu": MessageLookupByLibrary.simpleMessage("Thu"),
+    "dreamTrafficTotal": MessageLookupByLibrary.simpleMessage("Traffic"),
+    "dreamTrafficTue": MessageLookupByLibrary.simpleMessage("Tue"),
+    "dreamTrafficUp": MessageLookupByLibrary.simpleMessage("Up"),
+    "dreamTrafficWed": MessageLookupByLibrary.simpleMessage("Wed"),
+    "dreamTrafficWeek": MessageLookupByLibrary.simpleMessage("Week"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "editGlobalRules": MessageLookupByLibrary.simpleMessage(
       "Edit global rules",
