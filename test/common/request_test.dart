@@ -74,10 +74,11 @@ void main() {
       return Request()..dio.httpClientAdapter = _HostAdapter(byHost);
     }
 
-    test('reads the release from the API', () async {
+    test('reads the newest non-draft release from the API list', () async {
       final request = requestAnswering({
         'api.github.com': () => ResponseBody.fromString(
-          '{"tag_name":"v1.2.3","body":"notes"}',
+          '[{"tag_name":"v1.2.4","draft":true},'
+          '{"tag_name":"v1.2.3","body":"notes","draft":false}]',
           200,
           headers: {
             Headers.contentTypeHeader: [Headers.jsonContentType],
@@ -88,21 +89,20 @@ void main() {
       expect(await request.latestRelease(), {
         'tag_name': 'v1.2.3',
         'body': 'notes',
+        'draft': false,
       });
     });
 
     test(
-      'falls back to the release page when the API is rate limited',
+      'falls back to the releases page when the API is rate limited',
       () async {
         final request = requestAnswering({
           'api.github.com': () => ResponseBody.fromString('{}', 403),
           'github.com': () => ResponseBody.fromString(
-            '',
-            302,
+            '<a href="/owner/repo/releases/tag/v1.2.4">v1.2.4</a>',
+            200,
             headers: {
-              HttpHeaders.locationHeader: [
-                'https://github.com/owner/repo/releases/tag/v1.2.4',
-              ],
+              Headers.contentTypeHeader: [Headers.jsonContentType],
             },
           ),
         });

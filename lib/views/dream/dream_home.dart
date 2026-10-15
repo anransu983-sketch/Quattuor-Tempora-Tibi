@@ -36,10 +36,27 @@ class _DreamHomeViewState extends ConsumerState<DreamHomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    final expanded = ref.watch(dreamSidebarExpandedProvider);
+    final sidebarWidth =
+        expanded ? dreamSidebarFullWidth : dreamSidebarCollapsedWidth;
+    final contentStart =
+        expanded ? dreamSidebarVisibleWidth : dreamSidebarCollapsedWidth;
+    return Stack(
       children: [
-        const DreamSidebar(),
-        Expanded(
+        Positioned(
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: sidebarWidth,
+          child: DreamSidebar(
+            visibleWidth: expanded ? dreamSidebarVisibleWidth : null,
+          ),
+        ),
+        Positioned(
+          left: contentStart,
+          top: 0,
+          right: 0,
+          bottom: 0,
           child: SafeArea(
             left: false,
             child: Container(

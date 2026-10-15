@@ -5,6 +5,8 @@ import 'package:fl_clash/manager/app_manager.dart';
 import 'package:fl_clash/models/common.dart';
 import 'package:fl_clash/providers/providers.dart';
 import 'package:fl_clash/views/dashboard/widgets/start_button.dart';
+import 'package:fl_clash/views/dream/dream_home_prefs.dart';
+import 'package:fl_clash/views/dream/dream_sidebar.dart';
 import 'package:fl_clash/views/dream/onboarding/onboarding_gate.dart';
 import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter/foundation.dart';
@@ -84,6 +86,15 @@ class _HomeShell extends ConsumerWidget {
     final isDashboard = ref.watch(
       shownPageLabelProvider.select((label) => label == PageLabel.dashboard),
     );
+    final isHome = ref.watch(
+      shownPageLabelProvider.select((label) => label == PageLabel.home),
+    );
+    final sidebarExpanded = ref.watch(dreamSidebarExpandedProvider);
+    // The dream home page draws its own sidebar on the left; keep the
+    // floating dock clear of it so they never overlap.
+    final dockStart = isMobile && isHome
+        ? dreamSidebarDockInset(sidebarExpanded)
+        : 0.0;
     return Material(
       color: context.colorScheme.surface,
       child: Column(
@@ -103,7 +114,7 @@ class _HomeShell extends ConsumerWidget {
                   ),
                 ),
                 PositionedDirectional(
-                  start: 0,
+                  start: dockStart,
                   end: 0,
                   bottom: 0,
                   child: AnimatedVisibility.bottomNavigation(
