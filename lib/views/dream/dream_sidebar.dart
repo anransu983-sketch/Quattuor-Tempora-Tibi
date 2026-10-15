@@ -105,7 +105,7 @@ class _DreamSidebarState extends ConsumerState<DreamSidebar> {
     final hour = _now.hour.toString().padLeft(2, '0');
     final minute = _now.minute.toString().padLeft(2, '0');
     return Container(
-      width: expanded ? 116 : 76,
+      width: expanded ? 96 : 68,
       decoration: const BoxDecoration(gradient: _sidebarGradient),
       child: SafeArea(
         child: Column(
