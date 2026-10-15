@@ -1,11 +1,11 @@
-package com.suanran.strangers
+package com.follow.clash
 
-import com.suanran.strangers.common.AccessControlMode
-import com.suanran.strangers.models.SetupParams
-import com.suanran.strangers.models.SharedState
-import com.suanran.strangers.service.models.AccessControlProps
-import com.suanran.strangers.service.models.NotificationParams
-import com.suanran.strangers.service.models.VpnOptions
+import com.follow.clash.common.AccessControlMode
+import com.follow.clash.models.SetupParams
+import com.follow.clash.models.SharedState
+import com.follow.clash.service.models.AccessControlProps
+import com.follow.clash.service.models.NotificationParams
+import com.follow.clash.service.models.VpnOptions
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -102,7 +102,7 @@ private class FakeHost(override val scope: CoroutineScope) : ServiceStateHost {
     var lastStartOptions: VpnOptions? = null
 
     override var runtime: ServiceRuntime? = null
-    override val homeDirPath = "/data/user/0/com.suanran.strangers/files"
+    override val homeDirPath = "/data/user/0/com.follow.clash/files"
     override val sdkInt = 34
 
     val toasts = mutableListOf<String>()

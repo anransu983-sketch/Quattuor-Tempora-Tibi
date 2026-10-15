@@ -1,4 +1,4 @@
-package com.suanran.strangers.service.models
+package com.follow.clash.service.models
 
 import java.util.Locale
 import org.junit.After

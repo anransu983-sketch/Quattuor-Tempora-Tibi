@@ -1,4 +1,4 @@
-package com.suanran.strangers.packages
+package com.follow.clash.packages
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertEquals

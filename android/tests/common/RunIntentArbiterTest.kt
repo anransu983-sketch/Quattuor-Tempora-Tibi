@@ -1,4 +1,4 @@
-package com.suanran.strangers.common
+package com.follow.clash.common
 
 import java.util.concurrent.CyclicBarrier
 import java.util.concurrent.Executors
