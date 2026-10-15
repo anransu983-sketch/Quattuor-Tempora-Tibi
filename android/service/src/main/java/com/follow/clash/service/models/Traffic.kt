@@ -1,7 +1,7 @@
-package com.suanran.strangers.service.models
+package com.follow.clash.service.models
 
-import com.suanran.strangers.common.GlobalState
-import com.suanran.strangers.core.Core
+import com.follow.clash.common.GlobalState
+import com.follow.clash.core.Core
 import com.google.gson.Gson
 
 private val gson = Gson()

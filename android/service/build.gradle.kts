@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.suanran.strangers.service"
+    namespace = "com.follow.clash.service"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {

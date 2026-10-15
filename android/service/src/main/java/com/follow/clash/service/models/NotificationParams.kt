@@ -1,4 +1,4 @@
-package com.suanran.strangers.service.models
+package com.follow.clash.service.models
 
 data class NotificationParams(
     val title: String = "FlClash",

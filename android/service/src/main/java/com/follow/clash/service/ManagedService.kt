@@ -1,11 +1,11 @@
-package com.suanran.strangers.service
+package com.follow.clash.service
 
 import android.app.Service
 import android.content.ComponentCallbacks2
-import com.suanran.strangers.common.BroadcastAction
-import com.suanran.strangers.common.GlobalState
-import com.suanran.strangers.common.sendBroadcast
-import com.suanran.strangers.core.Core
+import com.follow.clash.common.BroadcastAction
+import com.follow.clash.common.GlobalState
+import com.follow.clash.common.sendBroadcast
+import com.follow.clash.core.Core
 
 interface ManagedService {
     fun start()

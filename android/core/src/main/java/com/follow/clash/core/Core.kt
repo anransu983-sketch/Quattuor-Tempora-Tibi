@@ -1,8 +1,8 @@
-package com.suanran.strangers.core
+package com.follow.clash.core
 
-import com.suanran.strangers.core.mobile.Mobile
-import com.suanran.strangers.core.mobile.ResultHandler
-import com.suanran.strangers.core.mobile.TunHandler
+import com.follow.clash.core.mobile.Mobile
+import com.follow.clash.core.mobile.ResultHandler
+import com.follow.clash.core.mobile.TunHandler
 import java.net.InetAddress
 import java.net.InetSocketAddress
 import java.net.URI

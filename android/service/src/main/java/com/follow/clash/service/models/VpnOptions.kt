@@ -1,6 +1,6 @@
-package com.suanran.strangers.service.models
+package com.follow.clash.service.models
 
-import com.suanran.strangers.common.AccessControlMode
+import com.follow.clash.common.AccessControlMode
 import com.google.gson.Gson
 import java.net.Inet4Address
 import java.net.Inet6Address

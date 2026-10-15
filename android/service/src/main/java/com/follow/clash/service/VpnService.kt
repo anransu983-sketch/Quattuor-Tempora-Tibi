@@ -1,4 +1,4 @@
-package com.suanran.strangers.service
+package com.follow.clash.service
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -8,18 +8,18 @@ import android.os.Binder
 import android.os.Build
 import android.os.IBinder
 import androidx.core.content.getSystemService
-import com.suanran.strangers.common.AccessControlMode
-import com.suanran.strangers.common.GlobalState
-import com.suanran.strangers.common.R as CommonR
-import com.suanran.strangers.core.Core
-import com.suanran.strangers.service.models.CIDR
-import com.suanran.strangers.service.models.VpnOptions
-import com.suanran.strangers.service.models.getIpv4RouteAddress
-import com.suanran.strangers.service.models.getIpv6RouteAddress
-import com.suanran.strangers.service.models.toCIDR
-import com.suanran.strangers.service.models.tunMtu
-import com.suanran.strangers.service.models.tunOptions
-import com.suanran.strangers.service.modules.ServiceModules
+import com.follow.clash.common.AccessControlMode
+import com.follow.clash.common.GlobalState
+import com.follow.clash.common.R as CommonR
+import com.follow.clash.core.Core
+import com.follow.clash.service.models.CIDR
+import com.follow.clash.service.models.VpnOptions
+import com.follow.clash.service.models.getIpv4RouteAddress
+import com.follow.clash.service.models.getIpv6RouteAddress
+import com.follow.clash.service.models.toCIDR
+import com.follow.clash.service.models.tunMtu
+import com.follow.clash.service.models.tunOptions
+import com.follow.clash.service.modules.ServiceModules
 import java.net.InetSocketAddress
 import java.util.concurrent.ConcurrentHashMap
 import android.net.VpnService as SystemVpnService

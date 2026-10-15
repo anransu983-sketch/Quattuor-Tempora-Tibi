@@ -1,4 +1,4 @@
-package com.suanran.strangers.service
+package com.follow.clash.service
 
 import android.database.Cursor
 import android.database.MatrixCursor
@@ -6,7 +6,7 @@ import android.os.CancellationSignal
 import android.os.ParcelFileDescriptor
 import android.provider.DocumentsContract
 import android.provider.DocumentsProvider
-import com.suanran.strangers.common.R as CommonR
+import com.follow.clash.common.R as CommonR
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.IOException

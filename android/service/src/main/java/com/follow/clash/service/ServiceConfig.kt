@@ -1,7 +1,7 @@
-package com.suanran.strangers.service
+package com.follow.clash.service
 
-import com.suanran.strangers.service.models.NotificationParams
-import com.suanran.strangers.service.models.VpnOptions
+import com.follow.clash.service.models.NotificationParams
+import com.follow.clash.service.models.VpnOptions
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 

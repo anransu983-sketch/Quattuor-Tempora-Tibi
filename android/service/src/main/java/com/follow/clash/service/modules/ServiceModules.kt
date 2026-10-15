@@ -1,4 +1,4 @@
-package com.suanran.strangers.service.modules
+package com.follow.clash.service.modules
 
 import android.app.Service
 import kotlinx.coroutines.CoroutineScope
