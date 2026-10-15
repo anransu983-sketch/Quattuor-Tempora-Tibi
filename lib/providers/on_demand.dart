@@ -9,20 +9,19 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:wifi_ssid/wifi_ssid.dart';
 
 import 'app.dart';
-import 'config.dart';
 
 part 'generated/on_demand.g.dart';
 
 @Riverpod(keepAlive: true)
 class LocationPermissions extends _$LocationPermissions {
   bool _requesting = false;
-  bool _autoRequested = false;
 
   @override
   WifiSsidPermission build() => WifiSsidPermission.denied;
 
   /// Only a request can tell a permanent denial apart, so a check leaves that
-  /// answer in place until it sees the grant.
+  /// answer in place until it sees the grant. Never prompts by itself: the
+  /// permission is requested in context from the on-demand settings page.
   Future<void> refresh() async {
     if (ref.read(safeModeProvider)) {
       return;
@@ -40,21 +39,6 @@ class LocationPermissions extends _$LocationPermissions {
     if (permission == WifiSsidPermission.granted ||
         state != WifiSsidPermission.permanentlyDenied) {
       state = permission;
-    }
-    if (ref.read(excludeSSIDsProvider).isEmpty) {
-      _autoRequested = false;
-      return;
-    }
-    if (permission != WifiSsidPermission.denied || _autoRequested) {
-      return;
-    }
-    try {
-      _autoRequested = await request() != null;
-    } on PlatformException catch (error) {
-      commonPrint.log(
-        'requestPermission error $error',
-        logLevel: LogLevel.warning,
-      );
     }
   }
 

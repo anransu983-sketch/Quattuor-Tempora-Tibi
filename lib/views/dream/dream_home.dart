@@ -146,6 +146,28 @@ class _TrafficRow extends ConsumerWidget {
 class _NodeRow extends ConsumerWidget {
   const _NodeRow();
 
+  void _testCurrentNode(WidgetRef ref) {
+    final groups = ref.read(visibleGroupsStateProvider).value;
+    if (groups.isEmpty) {
+      return;
+    }
+    final group = groups.first;
+    final nodeName = ref.read(selectedProxyNameProvider(group.name));
+    if (nodeName == null || nodeName.isEmpty) {
+      return;
+    }
+    Proxy? target;
+    for (final proxy in group.all) {
+      if (proxy.name == nodeName) {
+        target = proxy;
+        break;
+      }
+    }
+    if (target != null) {
+      ref.read(proxiesActionProvider.notifier).proxyDelayTest(target);
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final groups = ref.watch(visibleGroupsStateProvider).value;
@@ -157,19 +179,35 @@ class _NodeRow extends ConsumerWidget {
     final delay = ref.watch(
       delayProvider(proxyName: nodeName, testUrl: group.testUrl),
     );
-    return Row(
-      children: [
-        Expanded(
-          child: EmojiText(
-            nodeName.isEmpty ? '—' : nodeName,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+    final testing =
+        ref.watch(
+          delayTestPhaseProvider(proxyName: nodeName, testUrl: group.testUrl),
+        ) !=
+        null;
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: testing ? null : () => _testCurrentNode(ref),
+      child: Row(
+        children: [
+          Expanded(
+            child: EmojiText(
+              nodeName.isEmpty ? '—' : nodeName,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
           ),
-        ),
-        const SizedBox(width: 8),
-        _DelayLabel(delay: delay),
-      ],
+          const SizedBox(width: 8),
+          if (testing)
+            const SizedBox(
+              width: 18,
+              height: 18,
+              child: CircularProgressIndicator(strokeWidth: 2.5),
+            )
+          else
+            _DelayLabel(delay: delay),
+        ],
+      ),
     );
   }
 }
@@ -253,63 +291,30 @@ class _GreetingBlock extends ConsumerWidget {
 class _BottomBar extends ConsumerWidget {
   const _BottomBar();
 
-  void _testCurrentNode(WidgetRef ref) {
-    final groups = ref.read(visibleGroupsStateProvider).value;
-    if (groups.isEmpty) {
-      return;
-    }
-    final group = groups.first;
-    final nodeName = ref.read(selectedProxyNameProvider(group.name));
-    if (nodeName == null || nodeName.isEmpty) {
-      return;
-    }
-    Proxy? target;
-    for (final proxy in group.all) {
-      if (proxy.name == nodeName) {
-        target = proxy;
-        break;
-      }
-    }
-    if (target != null) {
-      ref.read(proxiesActionProvider.notifier).proxyDelayTest(target);
-    }
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appLocalizations = context.appLocalizations;
     final isStart = ref.watch(isStartProvider);
-    final groups = ref.watch(visibleGroupsStateProvider).value;
-    final group = groups.isEmpty ? null : groups.first;
-    final nodeName = group == null
-        ? ''
-        : (ref.watch(selectedProxyNameProvider(group.name)) ?? '');
-    final testing =
-        ref.watch(
-          delayTestPhaseProvider(proxyName: nodeName, testUrl: group?.testUrl),
-        ) !=
-        null;
     return Row(
       children: [
         SizedBox(
           width: 56,
           height: 56,
           child: OutlinedButton(
-            onPressed: testing ? null : () => _testCurrentNode(ref),
+            onPressed: () {
+              showSheet(
+                context: context,
+                builder: (_) => const DreamHomeSettingsSheet(),
+              );
+            },
             style: OutlinedButton.styleFrom(
               shape: AppShape.circle,
               padding: EdgeInsets.zero,
             ),
-            child: testing
-                ? const SizedBox(
-                    width: 22,
-                    height: 22,
-                    child: CircularProgressIndicator(strokeWidth: 2.5),
-                  )
-                : GlyphIcon(
-                    AppGlyphs.refresh,
-                    color: context.colorScheme.onSurfaceVariant,
-                  ),
+            child: GlyphIcon(
+              AppGlyphs.settings,
+              color: context.colorScheme.onSurfaceVariant,
+            ),
           ),
         ),
         const SizedBox(width: 12),
@@ -324,24 +329,6 @@ class _BottomBar extends ConsumerWidget {
                 isStart ? appLocalizations.dreamStop : appLocalizations.start,
                 style: const TextStyle(fontSize: 17),
               ),
-            ),
-          ),
-        ),
-        const SizedBox(width: 12),
-        SizedBox(
-          width: 56,
-          height: 56,
-          child: IconButton(
-            onPressed: () {
-              showSheet(
-                context: context,
-                builder: (_) => const DreamHomeSettingsSheet(),
-              );
-            },
-            tooltip: appLocalizations.dreamHomeSettings,
-            icon: GlyphIcon(
-              AppGlyphs.settings,
-              color: context.colorScheme.onSurfaceVariant,
             ),
           ),
         ),
